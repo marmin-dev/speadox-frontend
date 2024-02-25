@@ -1,8 +1,14 @@
+import Banner from "../components/common/Banner";
+import Footer from "../components/common/Footer";
+import Header from "../components/common/Header";
+
 const Main = () => {
   return (
     <div>
-      <h1>main page</h1>
-      <p>Hello</p>
+      <Header />
+      {/* <NavBar /> */}
+      <Banner />
+      <Footer />
     </div>
   );
 };
