@@ -1,7 +1,7 @@
 const Banner = () => {
   return (
     <section id="banner" data-video="images/banner">
-      <div class="inner">
+      <div className="inner">
         <header>
           <h1>SPEADOX</h1>
           <p>

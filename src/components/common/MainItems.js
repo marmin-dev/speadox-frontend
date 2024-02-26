@@ -1,19 +1,16 @@
-const MainItem = () => {
+const MainItems = () => {
   return (
-    <section class="wrapper style2">
-      <div class="inner">
+    <section className="wrapper style2">
+      <div className="inner">
         <header>
-          <h2>Etiam veroeros lorem</h2>
-          <p>
-            Fusce fringilla enim sit amet lectus sollicitudin, eu tincidunt odio
-            semper.
-          </p>
+          <h2>다양한 회사의 제품을 살펴보세요</h2>
+          <p>SPEADOX 는 다양한 오디오 회사의 제품들의 정보를 제공합니다</p>
         </header>
 
-        <div class="flex flex-tabs">
-          <ul class="tab-list">
+        <div className="flex flex-tabs">
+          <ul className="tab-list">
             <li>
-              <a href="#" data-tab="tab-1" class="active">
+              <a href="#" data-tab="tab-1" className="active">
                 Duis vestibulum tellus
               </a>
             </li>
@@ -28,225 +25,225 @@ const MainItem = () => {
               </a>
             </li>
           </ul>
-          <div class="tabs">
-            <div class="tab tab-1 flex flex-3 active">
-              <div class="video col">
-                <div class="image fit">
+          <div className="tabs">
+            <div className="tab tab-1 flex flex-3 active">
+              <div className="video col">
+                <div className="image fit">
                   <img src="images/pic01.jpg" alt="" />
-                  <div class="arrow">
-                    <div class="icon fa-play"></div>
+                  <div className="arrow">
+                    <div className="icon fa-play"></div>
                   </div>
                 </div>
-                <a href="generic.html" class="link">
+                <a href="generic.html" className="link">
                   <span>Click Me</span>
                 </a>
               </div>
 
-              <div class="video col">
-                <div class="image fit">
+              <div className="video col">
+                <div className="image fit">
                   <img src="images/pic02.jpg" alt="" />
-                  <div class="arrow">
-                    <div class="icon fa-play"></div>
+                  <div className="arrow">
+                    <div className="icon fa-play"></div>
                   </div>
                 </div>
-                <a href="generic.html" class="link">
+                <a href="generic.html" className="link">
                   <span>Click Me</span>
                 </a>
               </div>
 
-              <div class="video col">
-                <div class="image fit">
+              <div className="video col">
+                <div className="image fit">
                   <img src="images/pic03.jpg" alt="" />
-                  <div class="arrow">
-                    <div class="icon fa-play"></div>
+                  <div className="arrow">
+                    <div className="icon fa-play"></div>
                   </div>
                 </div>
-                <a href="generic.html" class="link">
+                <a href="generic.html" className="link">
                   <span>Click Me</span>
                 </a>
               </div>
 
-              <div class="video col">
-                <div class="image fit">
+              <div className="video col">
+                <div className="image fit">
                   <img src="images/pic04.jpg" alt="" />
-                  <div class="arrow">
-                    <div class="icon fa-play"></div>
+                  <div className="arrow">
+                    <div className="icon fa-play"></div>
                   </div>
                 </div>
-                <a href="generic.html" class="link">
+                <a href="generic.html" className="link">
                   <span>Click Me</span>
                 </a>
               </div>
 
-              <div class="video col">
-                <div class="image fit">
+              <div className="video col">
+                <div className="image fit">
                   <img src="images/pic05.jpg" alt="" />
-                  <div class="arrow">
-                    <div class="icon fa-play"></div>
+                  <div className="arrow">
+                    <div className="icon fa-play"></div>
                   </div>
                 </div>
-                <a href="generic.html" class="link">
+                <a href="generic.html" className="link">
                   <span>Click Me</span>
                 </a>
               </div>
 
-              <div class="video col">
-                <div class="image fit">
+              <div className="video col">
+                <div className="image fit">
                   <img src="images/pic06.jpg" alt="" />
-                  <div class="arrow">
-                    <div class="icon fa-play"></div>
+                  <div className="arrow">
+                    <div className="icon fa-play"></div>
                   </div>
                 </div>
-                <a href="generic.html" class="link">
+                <a href="generic.html" className="link">
                   <span>Click Me</span>
                 </a>
               </div>
             </div>
 
             {/* <!-- Tab 2 --> */}
-            <div class="tab tab-2 flex flex-3">
-              <div class="video col">
-                <div class="image fit">
+            <div className="tab tab-2 flex flex-3">
+              <div className="video col">
+                <div className="image fit">
                   <img src="images/pic06.jpg" alt="" />
-                  <div class="arrow">
-                    <div class="icon fa-play"></div>
+                  <div className="arrow">
+                    <div className="icon fa-play"></div>
                   </div>
                 </div>
-                <a href="generic.html" class="link">
+                <a href="generic.html" className="link">
                   <span>Click Me</span>
                 </a>
               </div>
 
-              <div class="video col">
-                <div class="image fit">
+              <div className="video col">
+                <div className="image fit">
                   <img src="images/pic05.jpg" alt="" />
-                  <div class="arrow">
-                    <div class="icon fa-play"></div>
+                  <div className="arrow">
+                    <div className="icon fa-play"></div>
                   </div>
                 </div>
-                <a href="generic.html" class="link">
+                <a href="generic.html" className="link">
                   <span>Click Me</span>
                 </a>
               </div>
 
-              <div class="video col">
-                <div class="image fit">
+              <div className="video col">
+                <div className="image fit">
                   <img src="images/pic04.jpg" alt="" />
-                  <div class="arrow">
-                    <div class="icon fa-play"></div>
+                  <div className="arrow">
+                    <div className="icon fa-play"></div>
                   </div>
                 </div>
-                <a href="generic.html" class="link">
+                <a href="generic.html" className="link">
                   <span>Click Me</span>
                 </a>
               </div>
 
-              <div class="video col">
-                <div class="image fit">
+              <div className="video col">
+                <div className="image fit">
                   <img src="images/pic03.jpg" alt="" />
-                  <div class="arrow">
-                    <div class="icon fa-play"></div>
+                  <div className="arrow">
+                    <div className="icon fa-play"></div>
                   </div>
                 </div>
-                <a href="generic.html" class="link">
+                <a href="generic.html" className="link">
                   <span>Click Me</span>
                 </a>
               </div>
 
-              <div class="video col">
-                <div class="image fit">
+              <div className="video col">
+                <div className="image fit">
                   <img src="images/pic02.jpg" alt="" />
-                  <div class="arrow">
-                    <div class="icon fa-play"></div>
+                  <div className="arrow">
+                    <div className="icon fa-play"></div>
                   </div>
                 </div>
-                <a href="generic.html" class="link">
+                <a href="generic.html" className="link">
                   <span>Click Me</span>
                 </a>
               </div>
 
-              <div class="video col">
-                <div class="image fit">
+              <div className="video col">
+                <div className="image fit">
                   <img src="images/pic01.jpg" alt="" />
-                  <div class="arrow">
-                    <div class="icon fa-play"></div>
+                  <div className="arrow">
+                    <div className="icon fa-play"></div>
                   </div>
                 </div>
-                <a href="generic.html" class="link">
+                <a href="generic.html" className="link">
                   <span>Click Me</span>
                 </a>
               </div>
             </div>
 
-            <div class="tab tab-3 flex flex-3">
-              <div class="video col">
-                <div class="image fit">
+            <div className="tab tab-3 flex flex-3">
+              <div className="video col">
+                <div className="image fit">
                   <img src="images/pic03.jpg" alt="" />
-                  <div class="arrow">
-                    <div class="icon fa-play"></div>
+                  <div className="arrow">
+                    <div className="icon fa-play"></div>
                   </div>
                 </div>
-                <a href="generic.html" class="link">
+                <a href="generic.html" className="link">
                   <span>Click Me</span>
                 </a>
               </div>
 
-              <div class="video col">
-                <div class="image fit">
+              <div className="video col">
+                <div className="image fit">
                   <img src="images/pic02.jpg" alt="" />
-                  <div class="arrow">
-                    <div class="icon fa-play"></div>
+                  <div className="arrow">
+                    <div className="icon fa-play"></div>
                   </div>
                 </div>
-                <a href="generic.html" class="link">
+                <a href="generic.html" className="link">
                   <span>Click Me</span>
                 </a>
               </div>
 
-              <div class="video col">
-                <div class="image fit">
+              <div className="video col">
+                <div className="image fit">
                   <img src="images/pic01.jpg" alt="" />
-                  <div class="arrow">
-                    <div class="icon fa-play"></div>
+                  <div className="arrow">
+                    <div className="icon fa-play"></div>
                   </div>
                 </div>
-                <a href="generic.html" class="link">
+                <a href="generic.html" className="link">
                   <span>Click Me</span>
                 </a>
               </div>
 
-              <div class="video col">
-                <div class="image fit">
+              <div className="video col">
+                <div className="image fit">
                   <img src="images/pic06.jpg" alt="" />
-                  <div class="arrow">
-                    <div class="icon fa-play"></div>
+                  <div className="arrow">
+                    <div className="icon fa-play"></div>
                   </div>
                 </div>
-                <a href="generic.html" class="link">
+                <a href="generic.html" className="link">
                   <span>Click Me</span>
                 </a>
               </div>
 
-              <div class="video col">
-                <div class="image fit">
+              <div className="video col">
+                <div className="image fit">
                   <img src="images/pic05.jpg" alt="" />
-                  <div class="arrow">
-                    <div class="icon fa-play"></div>
+                  <div className="arrow">
+                    <div className="icon fa-play"></div>
                   </div>
                 </div>
-                <a href="generic.html" class="link">
+                <a href="generic.html" className="link">
                   <span>Click Me</span>
                 </a>
               </div>
 
-              <div class="video col">
-                <div class="image fit">
+              <div className="video col">
+                <div className="image fit">
                   <img src="images/pic04.jpg" alt="" />
-                  <div class="arrow">
-                    <div class="icon fa-play"></div>
+                  <div className="arrow">
+                    <div className="icon fa-play"></div>
                   </div>
                 </div>
-                <a href="generic.html" class="link">
+                <a href="generic.html" className="link">
                   <span>Click Me</span>
                 </a>
               </div>
@@ -257,4 +254,4 @@ const MainItem = () => {
     </section>
   );
 };
-export default MainItem;
+export default MainItems;
