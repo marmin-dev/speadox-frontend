@@ -5,7 +5,7 @@ import MainItems from "../components/common/MainItems";
 
 const Main = () => {
   return (
-    <div>
+    <div id="main">
       <Header />
       {/* <NavBar /> */}
       <Banner />

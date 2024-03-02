@@ -2674,7 +2674,7 @@
 		ul.tab-list li a {
 			background: rgba(255, 255, 255, 0.075);
 			border-radius: 4px;
-			color: rgba(255, 255, 255, 0.5) !important;
+			color: rgba(0, 0, 0, 0.5) !important;
 			margin-bottom: .5em;
 			padding: .5em 1em;
 			display: inline-block;
@@ -3044,7 +3044,7 @@
 			}
 
 		.wrapper.style2 {
-			background-color: #041625;
+			background-color: #ffffff;
 			color: #c0c5c9;
 		}
 
@@ -3065,7 +3065,7 @@
 			}
 
 			.wrapper.style2 h1, .wrapper.style2 h2, .wrapper.style2 h3, .wrapper.style2 h4, .wrapper.style2 h5, .wrapper.style2 h6 {
-				color: #ffffff;
+				color: #000000;
 			}
 
 			.wrapper.style2 blockquote {
