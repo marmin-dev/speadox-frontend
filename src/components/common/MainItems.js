@@ -1,30 +1,19 @@
 // private String imageName;
 
 import { useEffect, useState } from "react";
-import { getRequest } from "../../utils/axiosModule";
 
 // private String pName;
 
 // private Long id;
 
 // private String pBrand;
+const imgUrl = process.env.REACT_APP_IMAGE_URL;
 
-const MainItems = () => {
+const MainItems = ({ listData }) => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        let response = await getRequest(
-          "http://localhost:8080/api/v1/product/main/jbl"
-        );
-        setData(response);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
+    setData(listData);
+  }, [listData]);
   return (
     <section className="wrapper style2">
       <div className="inner">
@@ -47,12 +36,15 @@ const MainItems = () => {
               {data.map((item, index) => (
                 <div className="video col" key={index}>
                   <div className="image fit">
-                    <img src={item.imageName} alt="" />
+                    <img
+                      src={`${imgUrl}/${item.pbrand}/${item.imageName}`}
+                      alt=""
+                    />
                   </div>
-                  <a href={`/list/${item.pName}`} className="link">
-                    <span>{item.pName}</span>
+                  <a href={`/list/${item.pname}`} className="link">
+                    <span>{item.pname}</span>
                   </a>
-                  <span>{item.pName}</span>
+                  <span>{item.pname}</span>
                 </div>
               ))}
             </div>
