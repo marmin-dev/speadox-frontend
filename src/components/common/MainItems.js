@@ -35,7 +35,7 @@ const MainItems = ({ listData }) => {
             <div className="tab tab-1 flex flex-3 active">
               {data.map((item, index) => (
                 <div className="video col" key={index}>
-                  <div className="image fit">
+                  <div className="image fitter">
                     <img
                       src={`${imgUrl}/${item.pbrand}/${item.imageName}`}
                       alt=""

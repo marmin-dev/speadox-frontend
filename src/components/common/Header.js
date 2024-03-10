@@ -30,7 +30,7 @@ const Header = () => {
             <a href="/">Home</a>
           </li>
           <li>
-            <a href="generic.html">장비 목록</a>
+            <a href="/product/list">장비 목록</a>
           </li>
           <li>
             <a href="elements.html">Elements</a>

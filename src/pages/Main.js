@@ -24,7 +24,6 @@ const Main = () => {
   return (
     <div id="main">
       <Header />
-      {/* <NavBar /> */}
       <Banner />
       <MainItems listData={data} />
       <Footer />
