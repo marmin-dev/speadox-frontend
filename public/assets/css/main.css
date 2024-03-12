@@ -1846,7 +1846,7 @@
 		}
 
 	.box {
-		border-color: rgba(255, 255, 255, 0.15);
+		border-color: rgba(0, 0, 0, 1);
 	}
 
 /* Button */
@@ -3087,7 +3087,8 @@
 			}
 
 			.wrapper.style2 .box {
-				border-color: rgba(255, 255, 255, 0.15);
+				border-color: rgba(0, 0, 0, 1);
+				margin: 10px;
 			}
 
 			.wrapper.style2 input[type="submit"],

@@ -1,12 +1,12 @@
 import { styled } from "styled-components";
 
-const space = styled.div`
-  height: 44px;
+const Space = styled.div`
+  height: 48px;
   width: 100%;
 `;
 
 const Spacer = () => {
-  return <space />;
+  return <Space />;
 };
 
 export default Spacer;
