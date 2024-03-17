@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import { TestListData } from "../testData/TestData";
+import Pagenation from "./Pagination";
 
 const imgUrl = process.env.REACT_APP_IMAGE_URL;
 
@@ -47,6 +48,7 @@ const ItemList = () => {
           </a>
         </div>
       ))}
+      <Pagenation page={18} />
     </div>
   );
 };
