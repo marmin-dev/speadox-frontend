@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { styled } from "styled-components";
 
 const PageSetterBtn = styled.button`
@@ -24,21 +24,47 @@ const PageUl = styled.ul`
 
 const Pagenation = (page) => {
   const [pageNumb, setPageNumb] = useState([]);
+  let urlParams = new URLSearchParams(window.location.search);
+  const [pageParam, setPageParam] = useState(urlParams.get("page"));
+  const [currentPage, setCurrentPage] = useState(urlParams.get("page"));
+
+  useEffect(() => {
+    if (currentPage == null) {
+      setCurrentPage(1);
+    }
+    if (pageParam == null) {
+      setPageNumb([1, 2, 3, 4, 5]);
+    } else {
+      let pageList = [];
+      let pageSeq = Math.ceil(currentPage / 5);
+      for (let i = (pageSeq - 1) * 5 + 1; i < pageSeq * 5 + 1; i++) {
+        pageList.push(i);
+      }
+      setPageNumb(pageList);
+    }
+  }, []);
 
   const next = () => {
+    // 다음 버튼 클릭시
     let maxPage = pageNumb[pageNumb.length - 1];
+    let nextMaxPage = maxPage + 5;
     let pageList = [];
-    for (let i = maxPage + 1; i <= maxPage + 5; i++) {
+    if (nextMaxPage > page.page) {
+      nextMaxPage = page.page;
+    }
+    for (let i = maxPage + 1; i <= nextMaxPage; i++) {
       pageList.push(i);
     }
     setPageNumb(pageList);
   };
   const previous = () => {
+    // 이전 버튼 클릭시
     let minPage = pageNumb[0];
     let pageList = [];
-    for (let i = minPage - 5; i <= minPage + 4; i++) {
+    for (let i = minPage - 5; i <= minPage - 1; i++) {
       pageList.push(i);
     }
+    console.log(pageList);
     setPageNumb(pageList);
   };
 
@@ -46,27 +72,19 @@ const Pagenation = (page) => {
     <PageUl>
       {pageNumb[0] != 1 && (
         <PageLi>
-          <PageSetterBtn onClick={previous()}>이전</PageSetterBtn>
+          <PageSetterBtn onClick={previous}>이전</PageSetterBtn>
         </PageLi>
       )}
-      <PageLi>
-        <a href="#">1</a>
-      </PageLi>
-      <PageLi>
-        <a href="#">2</a>
-      </PageLi>
-      <PageLi>
-        <a href="#">3</a>
-      </PageLi>
-      <PageLi>
-        <a href="#">4</a>
-      </PageLi>
-      <PageLi>
-        <a href="#">5</a>
-      </PageLi>
-      {pageNumb[pageNumb.length - 1] != page && (
+      {pageNumb.map((item) => (
         <PageLi>
-          <PageSetterBtn>다음</PageSetterBtn>
+          <a href={`?page=${item}`} key={`page${item}`}>
+            {item}
+          </a>
+        </PageLi>
+      ))}
+      {pageNumb[pageNumb.length - 1] != page.page && (
+        <PageLi>
+          <PageSetterBtn onClick={next}>다음</PageSetterBtn>
         </PageLi>
       )}
     </PageUl>
