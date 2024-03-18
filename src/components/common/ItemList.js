@@ -1,6 +1,4 @@
 import { styled } from "styled-components";
-import { TestListData } from "../testData/TestData";
-import Pagenation from "./Pagination";
 
 const imgUrl = process.env.REACT_APP_IMAGE_URL;
 
@@ -24,8 +22,8 @@ const RowBlock = styled.div`
   flex-direction: row;
 `;
 
-const ItemList = () => {
-  const items = TestListData;
+const ItemList = ({ items }) => {
+  // const items = TestListData;
   return (
     <div style={{ backgroundColor: "#fff" }}>
       <div>
@@ -48,7 +46,6 @@ const ItemList = () => {
           </a>
         </div>
       ))}
-      <Pagenation page={18} />
     </div>
   );
 };
