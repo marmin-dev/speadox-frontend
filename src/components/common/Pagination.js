@@ -33,7 +33,15 @@ const Pagenation = (page) => {
       setCurrentPage(1);
     }
     if (pageParam == null) {
-      setPageNumb([1, 2, 3, 4, 5]);
+      if (page < 5) {
+        let pageList = [];
+        for (let p = 1; p <= page; p++) {
+          pageList.push(p);
+        }
+        setPageNumb(pageList);
+      } else {
+        setPageNumb([1, 2, 3, 4, 5]);
+      }
     } else {
       let pageList = [];
       let pageSeq = Math.ceil(currentPage / 5);

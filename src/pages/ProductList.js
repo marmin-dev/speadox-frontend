@@ -4,7 +4,10 @@ import Header from "../components/common/Header";
 import ItemList from "../components/common/ItemList";
 import QueryForm from "../components/common/QueryForm";
 import Spacer from "../components/common/Spacer";
-import { getListDataByCategory } from "../components/module/ListApi";
+import {
+  getListDataByCategory,
+  getSearchListDataBy,
+} from "../components/module/ListApi";
 import Pagenation from "../components/common/Pagination";
 
 const ProductList = () => {
@@ -17,16 +20,33 @@ const ProductList = () => {
     setItems(response.dtos);
     setMaxPage(response.maxPage);
   };
+  const getSearchItems = async (category, keyword, page) => {
+    let requestData = {
+      category: category,
+      keyword: keyword,
+    };
+
+    let response = await getSearchListDataBy(requestData, page);
+    setItems(response.dtos);
+    setMaxPage(response.maxPage);
+  };
+
   useEffect(() => {
     let page = 1;
     let category = "all";
-    if (urlParams.get("category") != null) {
-      category = urlParams.get("category");
+    let search = urlParams.get("keyword");
+    let searchCat = urlParams.get("searchCat");
+    if (search == null) {
+      if (urlParams.get("category") != null) {
+        category = urlParams.get("category");
+      }
+      if (urlParams.get("page") != null) {
+        page = urlParams.get("page");
+      }
+      getItems(category, page);
+    } else {
+      getSearchItems(searchCat, search, page);
     }
-    if (urlParams.get("page") != null) {
-      page = urlParams.get("page");
-    }
-    getItems(category, page);
   }, []);
   return (
     <div id="main">
