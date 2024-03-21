@@ -12,7 +12,7 @@ import Pagenation from "../components/common/Pagination";
 
 const ProductList = () => {
   const [items, setItems] = useState([]);
-  const [maxPage, setMaxPage] = useState(5);
+  const [maxPage, setMaxPage] = useState();
   let urlParams = new URLSearchParams(window.location.search);
 
   const getItems = async (category, page) => {
@@ -25,7 +25,6 @@ const ProductList = () => {
       category: category,
       keyword: keyword,
     };
-
     let response = await getSearchListDataBy(requestData, page);
     setItems(response.dtos);
     setMaxPage(response.maxPage);

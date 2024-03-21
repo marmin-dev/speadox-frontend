@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 
 const PageSetterBtn = styled.button`
@@ -27,19 +28,26 @@ const Pagenation = (page) => {
   let urlParams = new URLSearchParams(window.location.search);
   const [pageParam, setPageParam] = useState(urlParams.get("page"));
   const [currentPage, setCurrentPage] = useState(urlParams.get("page"));
+  const [baseUrl, setBaseUrl] = useState("");
+  const location = useLocation();
+
+  // {data !== null ? <p>{data}</p> : null}
 
   useEffect(() => {
+    const params = location.search;
     if (currentPage == null) {
       setCurrentPage(1);
     }
     if (pageParam == null) {
-      if (page < 5) {
+      if (page.page < 5) {
+        console.log("hello");
         let pageList = [];
-        for (let p = 1; p <= page; p++) {
+        for (let p = 1; p <= page.page; p++) {
           pageList.push(p);
         }
         setPageNumb(pageList);
       } else {
+        console.log(page);
         setPageNumb([1, 2, 3, 4, 5]);
       }
     } else {
@@ -50,7 +58,20 @@ const Pagenation = (page) => {
       }
       setPageNumb(pageList);
     }
-  }, []);
+    let base = window.location.href.split("?")[0] + "?";
+    if (params.includes("?")) {
+      let paramList = params.split("&");
+      for (let param of paramList) {
+        if (!param.includes("page")) {
+          param = param.replace("?", "");
+          base = `${base}${param}&`;
+        }
+      }
+    } else {
+      base = `${base}?`;
+    }
+    setBaseUrl(base);
+  }, [page.page]);
 
   const next = () => {
     // 다음 버튼 클릭시
@@ -85,7 +106,7 @@ const Pagenation = (page) => {
       )}
       {pageNumb.map((item) => (
         <PageLi>
-          <a href={`?page=${item}`} key={`page${item}`}>
+          <a href={`${baseUrl}page=${item}`} key={`page${item}`}>
             {item}
           </a>
         </PageLi>
