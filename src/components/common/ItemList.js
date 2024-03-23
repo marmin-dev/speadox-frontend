@@ -30,7 +30,7 @@ const ItemList = ({ items }) => {
         <h2 style={{ color: "black" }}>음향 기기 목록</h2>
       </div>
       {items.map((i, index) => (
-        <div className="box" style={{ marginBottom: 0 }}>
+        <div className="box" style={{ marginBottom: 0 }} key={i.pname}>
           <a href="#">
             <RowBlock>
               <div style={{ marginRight: 5 }}>

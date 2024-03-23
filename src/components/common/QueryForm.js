@@ -21,8 +21,8 @@ const QueryForm = () => {
 
   return (
     <form>
-      <div class="row uniform">
-        <div class="9u 12u$(small)">
+      <div className="row uniform">
+        <div className="9u 12u$(small)">
           <input
             type="text"
             name="keyword"
@@ -30,11 +30,16 @@ const QueryForm = () => {
             placeholder="무엇을 검색할까요?"
           />
         </div>
-        <div class="3u$ 12u$(small)">
-          <input type="submit" value="Search" class="fit" onClick={onSearch} />
+        <div className="3u$ 12u$(small)">
+          <input
+            type="submit"
+            value="Search"
+            className="fit"
+            onClick={onSearch}
+          />
         </div>
       </div>
-      <div class="select-wrapper">
+      <div className="select-wrapper">
         <select name="searchCat" id="category">
           <option value="name">스피커 이름으로 검색</option>
           <option value="spec">스피커 스펙으로 검색</option>

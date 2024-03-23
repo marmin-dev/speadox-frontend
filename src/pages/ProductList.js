@@ -12,6 +12,7 @@ import Pagenation from "../components/common/Pagination";
 
 const ProductList = () => {
   const [items, setItems] = useState([]);
+  const [page, setPage] = useState(1);
   const [maxPage, setMaxPage] = useState();
   let urlParams = new URLSearchParams(window.location.search);
 
@@ -20,6 +21,7 @@ const ProductList = () => {
     setItems(response.dtos);
     setMaxPage(response.maxPage);
   };
+
   const getSearchItems = async (category, keyword, page) => {
     let requestData = {
       category: category,
@@ -31,7 +33,12 @@ const ProductList = () => {
   };
 
   useEffect(() => {
-    let page = 1;
+    if (urlParams.get("page")) {
+      setPage(urlParams.get("page"));
+    }
+  }, []);
+
+  useEffect(() => {
     let category = "all";
     let search = urlParams.get("keyword");
     let searchCat = urlParams.get("searchCat");
@@ -40,13 +47,14 @@ const ProductList = () => {
         category = urlParams.get("category");
       }
       if (urlParams.get("page") != null) {
-        page = urlParams.get("page");
+        setPage(urlParams.get("page"));
       }
       getItems(category, page);
     } else {
       getSearchItems(searchCat, search, page);
     }
-  }, []);
+  }, [page]);
+
   return (
     <div id="main">
       <Header />

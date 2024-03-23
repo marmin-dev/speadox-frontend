@@ -47,16 +47,23 @@ const Pagenation = (page) => {
         }
         setPageNumb(pageList);
       } else {
-        console.log(page);
+        console.log(page.page);
         setPageNumb([1, 2, 3, 4, 5]);
       }
     } else {
       let pageList = [];
       let pageSeq = Math.ceil(currentPage / 5);
-      for (let i = (pageSeq - 1) * 5 + 1; i < pageSeq * 5 + 1; i++) {
-        pageList.push(i);
+      if (page.page > pageSeq * 5 + 1) {
+        for (let i = (pageSeq - 1) * 5 + 1; i < pageSeq * 5 + 1; i++) {
+          pageList.push(i);
+        }
+      } else {
+        for (let i = (pageSeq - 1) * 5 + 1; i <= page.page; i++) {
+          pageList.push(i);
+        }
       }
       setPageNumb(pageList);
+      console.log(pageList);
     }
     let base = window.location.href.split("?")[0] + "?";
     if (params.includes("?")) {
@@ -68,7 +75,7 @@ const Pagenation = (page) => {
         }
       }
     } else {
-      base = `${base}?`;
+      base = `${base}`;
     }
     setBaseUrl(base);
   }, [page.page]);
@@ -86,6 +93,7 @@ const Pagenation = (page) => {
     }
     setPageNumb(pageList);
   };
+
   const previous = () => {
     // 이전 버튼 클릭시
     let minPage = pageNumb[0];
@@ -105,10 +113,8 @@ const Pagenation = (page) => {
         </PageLi>
       )}
       {pageNumb.map((item) => (
-        <PageLi>
-          <a href={`${baseUrl}page=${item}`} key={`page${item}`}>
-            {item}
-          </a>
+        <PageLi key={`page${item}`}>
+          <a href={`${baseUrl}page=${item}`}>{item}</a>
         </PageLi>
       ))}
       {pageNumb[pageNumb.length - 1] != page.page && (
