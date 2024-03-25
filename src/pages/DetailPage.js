@@ -4,6 +4,7 @@ import Header from "../components/common/Header";
 import Spacer from "../components/common/Spacer";
 import { useEffect, useState } from "react";
 import { getDetailData } from "../components/module/ListApi";
+import DetailBody from "../components/common/DetailBody";
 
 const DetailPage = () => {
   // 현재 페이지의 id 값을 가져옴
@@ -13,6 +14,7 @@ const DetailPage = () => {
   const getDetail = async (id) => {
     const response = await getDetailData(id);
     console.log(response);
+    setDetailData(detailData);
   };
 
   useEffect(() => {
@@ -23,7 +25,7 @@ const DetailPage = () => {
     <div id="main">
       <Header />
       <Spacer />
-      <h1>hello it's detail</h1>
+      <DetailBody />
 
       <Footer />
     </div>

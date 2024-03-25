@@ -14,7 +14,7 @@ const Header = () => {
     <>
       <header id="header">
         <h1>
-          <a href="#">
+          <a href="/">
             SPEADOX <span>by Marmin</span>
           </a>
         </h1>
