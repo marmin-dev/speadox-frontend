@@ -22,16 +22,21 @@ const RowBlock = styled.div`
   flex-direction: row;
 `;
 
+const ResultSpan = styled.span`
+  margin-left: 10px;
+  color: #464646;
+`;
+
 const ItemList = ({ items }) => {
   // const items = TestListData;
   return (
     <div style={{ backgroundColor: "#fff" }}>
       <div>
-        <h2 style={{ color: "black" }}>음향 기기 목록</h2>
+        <ResultSpan>{items.length}개의 검색 결과가 있습니다</ResultSpan>
       </div>
       {items.map((i, index) => (
         <div className="box" style={{ marginBottom: 0 }} key={i.pname}>
-          <a href="#">
+          <a href={`/product/detail/${i.id}`}>
             <RowBlock>
               <div style={{ marginRight: 5 }}>
                 <BoxImg src={`${imgUrl}/${i.pbrand}/${i.imageName}`} />
