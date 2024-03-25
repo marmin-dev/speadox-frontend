@@ -9,24 +9,26 @@ import DetailBody from "../components/common/DetailBody";
 const DetailPage = () => {
   // 현재 페이지의 id 값을 가져옴
   const { id } = useParams();
-  const [detailData, setDetailData] = useState({});
+  const [detailData, setDetailData] = useState(null);
 
   const getDetail = async (id) => {
     const response = await getDetailData(id);
     console.log(response);
-    setDetailData(detailData);
   };
 
   useEffect(() => {
-    getDetail(id);
+    setDetailData(getDetail(id));
   }, []);
 
   return (
     <div id="main">
       <Header />
       <Spacer />
-      <DetailBody />
-
+      {detailData ? ( // detailData가 있는 경우에만 DetailBody를 렌더링
+        <DetailBody data={detailData} />
+      ) : (
+        <p>Loading...</p>
+      )}
       <Footer />
     </div>
   );
