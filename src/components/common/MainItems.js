@@ -41,7 +41,7 @@ const MainItems = ({ listData }) => {
                       alt=""
                     />
                   </div>
-                  <a href={`/list/${item.pname}`} className="link">
+                  <a href={`/product/detail/${item.id}`} className="link">
                     <span>{item.pname}</span>
                   </a>
                   <span>{item.pname}</span>
