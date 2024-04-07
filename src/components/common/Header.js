@@ -33,7 +33,7 @@ const Header = () => {
             <a href="/product/list">장비 목록</a>
           </li>
           <li>
-            <a href="elements.html">Elements</a>
+            <a href="/calculator">음향계산기</a>
           </li>
         </ul>
       </nav>
