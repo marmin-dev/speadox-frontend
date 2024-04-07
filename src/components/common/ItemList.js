@@ -34,23 +34,25 @@ const ItemList = ({ items }) => {
       <div>
         <ResultSpan>{items.length}개의 검색 결과가 있습니다</ResultSpan>
       </div>
-      {items.map((i, index) => (
-        <div className="box" style={{ marginBottom: 0 }} key={i.pname}>
-          <a href={`/product/detail/${i.id}`}>
-            <RowBlock>
-              <div style={{ marginRight: 5 }}>
-                <BoxImg src={`${imgUrl}/${i.pbrand}/${i.imageName}`} />
-              </div>
-              <div>
-                <Pname>{i.pname}</Pname>
-                <Pspan>{i.pbrand}</Pspan>
-                <Pspan>{i.category}</Pspan>
-                <span style={{ color: "#848484" }}>{i.subDescription}</span>
-              </div>
-            </RowBlock>
-          </a>
-        </div>
-      ))}
+      {Array.isArray(items)
+        ? items.map((i, index) => (
+            <div className="box" style={{ marginBottom: 0 }} key={i.pname}>
+              <a href={`/product/detail/${i.id}`}>
+                <RowBlock>
+                  <div style={{ marginRight: 5 }}>
+                    <BoxImg src={`${imgUrl}/${i.pbrand}/${i.imageName}`} />
+                  </div>
+                  <div>
+                    <Pname>{i.pname}</Pname>
+                    <Pspan>{i.pbrand}</Pspan>
+                    <Pspan>{i.category}</Pspan>
+                    <span style={{ color: "#848484" }}>{i.subDescription}</span>
+                  </div>
+                </RowBlock>
+              </a>
+            </div>
+          ))
+        : null}
     </div>
   );
 };

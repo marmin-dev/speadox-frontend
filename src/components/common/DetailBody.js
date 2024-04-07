@@ -12,7 +12,7 @@ const MainSection = styled.div`
     margin-left: 10px;
   }
   table {
-    width: 100%;
+    width: 70%;
     color: #646461;
     tbody {
       tr {
