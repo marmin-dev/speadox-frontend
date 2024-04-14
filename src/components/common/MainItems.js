@@ -1,19 +1,40 @@
 // private String imageName;
 
 import { useEffect, useState } from "react";
+import { getRequest } from "../../utils/axiosModule";
 
 // private String pName;
 
 // private Long id;
 
 // private String pBrand;
-const imgUrl = process.env.REACT_APP_IMAGE_URL;
+const imgUrl = process.env.REACT_APP_THUMBNAIL_URL;
 
-const MainItems = ({ listData }) => {
+const MainItems = () => {
   const [data, setData] = useState([]);
+  const [isActive, setIsActive] = useState(1);
+  const apiUrl = process.env.REACT_APP_API_URL;
   useEffect(() => {
-    setData(listData);
-  }, [listData]);
+    const fetchData = async () => {
+      let response = [];
+      try {
+        if (isActive == 1) {
+          response = await getRequest(`${apiUrl}/api/v1/product/main/jbl`);
+        } else if (isActive == 2) {
+          response = await getRequest(
+            `${apiUrl}/api/v1/product/main/crownaudio`
+          );
+        }
+
+        setData(response);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, [isActive]);
+
   return (
     <section className="wrapper style2">
       <div className="inner">
@@ -25,8 +46,21 @@ const MainItems = ({ listData }) => {
         <div className="flex flex-tabs">
           <ul className="tab-list">
             <li>
-              <a href="#" data-tab="tab-1" className="active">
+              <a
+                data-tab="tab-1"
+                className={`${isActive == 1 ? "active" : ""}`}
+                onClick={() => setIsActive(1)}
+              >
                 JBL
+              </a>
+            </li>
+            <li>
+              <a
+                data-tab="tab-1"
+                className={`${isActive == 2 ? "active" : ""}`}
+                onClick={() => setIsActive(2)}
+              >
+                CrownAudio
               </a>
             </li>
           </ul>
