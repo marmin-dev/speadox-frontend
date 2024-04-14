@@ -27,6 +27,9 @@ const MainSection = styled.div`
 `;
 const ImageSection = styled.div`
   width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 const TextSection = styled.div`
   width: 40%;

@@ -1,11 +1,11 @@
 import { styled } from "styled-components";
 
-const imgUrl = process.env.REACT_APP_IMAGE_URL;
+const imgUrl = process.env.REACT_APP_THUMBNAIL_URL;
 
 const BoxImg = styled.img`
-  height: 100px;
+  width: 100%;
+  height: 100%;
 `;
-const A = styled.link``;
 
 const Pname = styled.h4`
   color: #000;
@@ -19,7 +19,8 @@ const Pspan = styled.p`
 
 const RowBlock = styled.div`
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  width: 100%;
 `;
 
 const ResultSpan = styled.span`
@@ -27,8 +28,23 @@ const ResultSpan = styled.span`
   color: #464646;
 `;
 
+const ImageDiv = styled.div`
+  height: 100%;
+  width: 20vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+`;
+
+const Box = styled.div`
+  margin-bottom: 0px;
+  height: fit-content;
+  display: flex; /* flexbox를 사용하여 내부 요소를 가로 정렬 */
+`;
+
 const ItemList = ({ items }) => {
-  // const items = TestListData;
   return (
     <div style={{ backgroundColor: "#fff" }}>
       <div>
@@ -36,21 +52,23 @@ const ItemList = ({ items }) => {
       </div>
       {Array.isArray(items)
         ? items.map((i, index) => (
-            <div className="box" style={{ marginBottom: 0 }} key={i.pname}>
-              <a href={`/product/detail/${i.id}`}>
-                <RowBlock>
-                  <div style={{ marginRight: 5 }}>
+            <Box className="box" style={{ marginBottom: 0 }} key={i.pname}>
+              <RowBlock>
+                <ImageDiv>
+                  <a href={`/product/detail/${i.id}`}>
                     <BoxImg src={`${imgUrl}/${i.pbrand}/${i.imageName}`} />
-                  </div>
-                  <div>
+                  </a>
+                </ImageDiv>
+                <div>
+                  <a href={`/product/detail/${i.id}`}>
                     <Pname>{i.pname}</Pname>
                     <Pspan>{i.pbrand}</Pspan>
                     <Pspan>{i.category}</Pspan>
                     <span style={{ color: "#848484" }}>{i.subDescription}</span>
-                  </div>
-                </RowBlock>
-              </a>
-            </div>
+                  </a>
+                </div>
+              </RowBlock>
+            </Box>
           ))
         : null}
     </div>
