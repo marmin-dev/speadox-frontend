@@ -14,6 +14,7 @@ const ProductList = () => {
   let urlParams = new URLSearchParams(window.location.search);
   const [items, setItems] = useState([]);
   const [page, setPage] = useState(urlParams.get("page"));
+  const [resultSize, setResultSize] = useState(0);
   const [maxPage, setMaxPage] = useState();
 
   const getItems = async (category, page) => {
@@ -21,6 +22,7 @@ const ProductList = () => {
     let response = await getListDataByCategory(category, page);
     setItems(response.dtos);
     setMaxPage(response.maxPage);
+    setResultSize(response.resultSize);
     console.log(response);
   };
 
@@ -33,6 +35,7 @@ const ProductList = () => {
     let response = await getSearchListDataBy(requestData, p);
     setItems(response.dtos);
     setMaxPage(response.maxPage);
+    setResultSize(response.resultSize);
     console.log(response);
   };
 
@@ -73,7 +76,7 @@ const ProductList = () => {
       <Header />
       <Spacer />
       <QueryForm />
-      <ItemList items={items} />
+      <ItemList items={items} resultSize={resultSize} />
       <Pagenation page={maxPage} />
       <Footer />
     </div>

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { styled } from "styled-components";
 
 const imgUrl = process.env.REACT_APP_THUMBNAIL_URL;
@@ -44,11 +45,17 @@ const Box = styled.div`
   display: flex; /* flexbox를 사용하여 내부 요소를 가로 정렬 */
 `;
 
-const ItemList = ({ items }) => {
+const ItemList = ({ items, resultSize }) => {
+  useEffect(() => {
+    if (typeof items != "list") {
+      items = [];
+    }
+  }, [items]);
+
   return (
     <div style={{ backgroundColor: "#fff" }}>
       <div>
-        <ResultSpan>{items.length}개의 검색 결과가 있습니다</ResultSpan>
+        <ResultSpan>{resultSize}개의 검색 결과가 있습니다</ResultSpan>
       </div>
       {Array.isArray(items)
         ? items.map((i, index) => (
