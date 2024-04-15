@@ -45,6 +45,11 @@ const Box = styled.div`
   display: flex; /* flexbox를 사용하여 내부 요소를 가로 정렬 */
 `;
 
+const MainSection = styled.div`
+  background-color: #fff;
+  width: 100%;
+`;
+
 const ItemList = ({ items, resultSize }) => {
   useEffect(() => {
     if (typeof items != "list") {
@@ -53,7 +58,7 @@ const ItemList = ({ items, resultSize }) => {
   }, [items]);
 
   return (
-    <div style={{ backgroundColor: "#fff" }}>
+    <MainSection>
       <div>
         <ResultSpan>{resultSize}개의 검색 결과가 있습니다</ResultSpan>
       </div>
@@ -78,7 +83,7 @@ const ItemList = ({ items, resultSize }) => {
             </Box>
           ))
         : null}
-    </div>
+    </MainSection>
   );
 };
 

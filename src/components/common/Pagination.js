@@ -18,7 +18,7 @@ const PageLi = styled.li`
 
 const PageUl = styled.ul`
   display: flex;
-  width: 100%;
+  width: 99%;
   justify-content: center;
   margin: 5px;
 `;

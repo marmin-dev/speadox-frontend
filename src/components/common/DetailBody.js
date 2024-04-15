@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 import { parseSpec } from "../../utils/stringModule";
 
 const MainSection = styled.div`
-  width: 100%;
+  width: 98%;
   margin: 10px;
   border-bottom: 1px solid black;
   .spec-h2 {

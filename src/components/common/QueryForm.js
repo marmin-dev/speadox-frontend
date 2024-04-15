@@ -1,4 +1,9 @@
 import { useState } from "react";
+import { styled } from "styled-components";
+
+const StyledForm = styled.form`
+  width: 100%;
+`;
 
 const QueryForm = () => {
   const [data, setData] = useState([]);
@@ -20,7 +25,7 @@ const QueryForm = () => {
   };
 
   return (
-    <form>
+    <StyledForm>
       <div className="row uniform">
         <div className="9u 12u$(small)">
           <input
@@ -46,7 +51,7 @@ const QueryForm = () => {
           <option value="brand">브랜드로 검색</option>
         </select>
       </div>
-    </form>
+    </StyledForm>
   );
 };
 
