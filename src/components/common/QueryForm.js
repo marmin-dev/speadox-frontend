@@ -15,14 +15,14 @@ const QueryForm = () => {
     });
   };
 
-  const onSearch = () => {
-    const currentUrl = window.location.href.split["?"][0];
-    let url = `${currentUrl}?`;
-    for (let key in data.keys) {
-      url.concat(`${key}=${data[key]}&`);
-    }
-    window.location.href = url.substring(0, url.length - 1);
-  };
+  // const onSearch = () => {
+  //   const currentUrl = window.location.href.split["?"][0];
+  //   let url = `${currentUrl}?`;
+  //   for (let key in data.keys) {
+  //     url.concat(`${key}=${data[key]}&`);
+  //   }
+  //   window.location.href = url.substring(0, url.length - 1);
+  // };
 
   return (
     <StyledForm>
@@ -40,7 +40,7 @@ const QueryForm = () => {
             type="submit"
             value="Search"
             className="fit"
-            onClick={onSearch}
+            // onClick={onSearch}
           />
         </div>
       </div>

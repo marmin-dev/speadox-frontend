@@ -76,7 +76,6 @@ const DetailBody = ({ data }) => {
   const [tableData, setTableData] = useState([]);
 
   useEffect(() => {
-    console.log(data);
     setTableData(parseSpec(data.spec));
   }, [data]);
 

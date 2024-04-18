@@ -51,12 +51,6 @@ const MainSection = styled.div`
 `;
 
 const ItemList = ({ items, resultSize }) => {
-  useEffect(() => {
-    if (typeof items != "list") {
-      items = [];
-    }
-  }, [items]);
-
   return (
     <MainSection>
       <div>

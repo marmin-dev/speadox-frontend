@@ -23,7 +23,6 @@ const ProductList = () => {
     setItems(response.dtos);
     setMaxPage(response.maxPage);
     setResultSize(response.resultSize);
-    console.log(response);
   };
 
   const getSearchItems = async (category, keyword, p) => {
@@ -36,7 +35,6 @@ const ProductList = () => {
     setItems(response.dtos);
     setMaxPage(response.maxPage);
     setResultSize(response.resultSize);
-    console.log(response);
   };
 
   useEffect(() => {
@@ -76,7 +74,9 @@ const ProductList = () => {
       <Header />
       <Spacer />
       <QueryForm />
-      <ItemList items={items} resultSize={resultSize} />
+      {typeof items != "list" ? (
+        <ItemList items={items} resultSize={resultSize} />
+      ) : null}
       <Pagenation page={maxPage} />
       <Footer />
     </div>

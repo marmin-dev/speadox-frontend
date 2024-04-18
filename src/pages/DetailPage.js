@@ -19,7 +19,6 @@ const DetailPage = () => {
   useEffect(() => {
     getDetail(id)
       .then((response) => {
-        console.log(response);
         setDetailData(response);
       })
       .catch((error) => {

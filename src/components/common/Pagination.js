@@ -40,14 +40,12 @@ const Pagenation = (page) => {
     }
     if (pageParam == null) {
       if (page.page < 5) {
-        console.log("hello");
         let pageList = [];
         for (let p = 1; p <= page.page; p++) {
           pageList.push(p);
         }
         setPageNumb(pageList);
       } else {
-        console.log(page.page);
         setPageNumb([1, 2, 3, 4, 5]);
       }
     } else {
@@ -63,7 +61,6 @@ const Pagenation = (page) => {
         }
       }
       setPageNumb(pageList);
-      console.log(pageList);
     }
     let base = window.location.href.split("?")[0] + "?";
     if (params.includes("?")) {
@@ -101,7 +98,6 @@ const Pagenation = (page) => {
     for (let i = minPage - 5; i <= minPage - 1; i++) {
       pageList.push(i);
     }
-    console.log(pageList);
     setPageNumb(pageList);
   };
 

@@ -13,7 +13,6 @@ export const getListDataByCategory = async (category, page) => {
   // speaker,subwoofer, all 등
   const apiUrl = process.env.REACT_APP_API_URL;
   const url = `${apiUrl}/api/v1/product/list/${category}/${page}`;
-  console.log(url);
   const response = await axios.get(url);
   return getResponseData(response);
 };
@@ -22,7 +21,6 @@ export const getSearchListDataBy = async (request, page) => {
   // 카테고리에 따라 검색 하여 리스트를 불러오는 함수
   const apiUrl = process.env.REACT_APP_API_URL;
   const url = `${apiUrl}/api/v1/product/search/${page}`;
-  console.log(url);
   const response = await axios.post(url, request);
   return getResponseData(response);
 };
